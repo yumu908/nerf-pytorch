@@ -39,12 +39,15 @@ You will also need the [LLFF code](http://github.com/fyusion/llff) (and COLMAP) 
 
 Download data for two example datasets: `lego` and `fern`
 ```
-bash download_example_data.sh 。在windows上是运行download_example_data.bat。但是要实现把wget.exe加到环境变量里面，以便去下载文件。
+bash download_example_data.sh 。
 ```
+在windows上是运行download_example_data.bat。但是要实现把wget.exe加到环境变量里面，以便去下载文件。
 
 To train a low-res `lego` NeRF:
 ```
 python run_nerf.py --config configs/lego.txt
+
+```
 如果出现 Torch not compiled with CUDA enabled 这个错误，需要卸载torch，然后重新安装torch，具体情况可以参照 ![传送](https://blog.csdn.net/xyy731121463/article/details/121478447)
 
 点击![官网](https://pytorch.org/get-started/locally/),选择PyTorch， 复制红框内的命令去安装PyTorch，比如说红框内的pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
@@ -54,7 +57,7 @@ python run_nerf.py --config configs/lego.txt
 那把pip install······改成pip install --user·····即可。
 ![1698823774230](https://github.com/yumu908/nerf-pytorch/assets/7889062/5ad471fa-fae0-4bb9-a47d-84df74dbff92)
 
-```
+
 After training for 100k iterations (~4 hours on a single 2080 Ti), you can find the following video at `logs/lego_test/lego_test_spiral_100000_rgb.mp4`.
 
 ![](https://user-images.githubusercontent.com/7057863/78473103-9353b300-7770-11ea-98ed-6ba2d877b62c.gif)
